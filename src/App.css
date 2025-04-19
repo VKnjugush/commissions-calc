@@ -1,18 +1,19 @@
 .container {
   max-width: 400px;
-  margin: 50px auto;
-  padding: 20px;
+  margin: 250px auto;
+  padding: 90px;
   border: 2px solid #4CAF50;
   border-radius: 10px;
   font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
   background-color: #f9f9f9;
-  box-shadow: 10px 7px 8px rgba(0,0,0,0.1) ;
+  box-shadow: 2px 1px 15px 11px rgba(3, 236, 139, 0.349) ;
   transition: all 0.3s ease;
 }
 
 .title {
   text-align: center;
   color: #4CAF50;
+  text-shadow: #8a6161 2px 2px 4px;
   margin-bottom: 20px;
 }
 
