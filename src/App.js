@@ -1,25 +1,45 @@
-import logo from './logo.svg';
+
+import React, { useState } from "react";
 import './App.css';
 
-function App() {
+const SimpleCalc = () => {
+  const [sales, setSales] = useState("");
+
+  const calculateCommission = (amount) => {
+    if (amount <= 100000) {
+      return amount * 0.03;
+    } else {
+      return amount * 0.05;
+    }
+  };
+
+  const handleChange = (e) => {
+    const value = e.target.value;
+    if (/^\d*$/.test(value)) {
+      setSales(value);
+    }
+  };
+
+  const numSales = Number(sales) || 0;
+  const commission = numSales > 0 ? calculateCommission(numSales) : 0;
+
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
+    <div class="container">
+      <h1 class="title">My Comm-s Calc</h1>
+      <label class="label">
+        Enter Sales Amount:
+        <input type="text"
+          value={sales}
+          onChange={handleChange}
+          placeholder="Enter sales amount"
+          class="input"
+        />
+      </label>
+      <div class="result">
+        <strong>Commission: </strong> ksh{commission.toFixed(2)}
+      </div>
     </div>
   );
-}
+};
 
-export default App;
+export default SimpleCalc;
